@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Peerawit Bootsa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <img src="profile.JPG" alt="Profile Picture" class="navbar-profile-pic">
+        <a href="#about-me" id="homeLink" class="nav-brand">Hello, I'm Peerawit Bootsa</a>
+    </div>
+    <div class="navbar-right">
+         <div class="navbar-item">
+            <button id="navGraduationProjectButton" type="button">Graduation Project</button>
+        </div>
+        <div class="dropdown navbar-item">
+
+            <button class="dropbtn">Projects</button>
+            <div class="dropdown-content">
+                <a href="#ux-ui" class="portfolio-link">UX/UI</a>
+                <a href="#data-analysis" class="portfolio-link">Data Analysis</a>
+                <a href="#backend-dev" class="portfolio-link">Backend Development</a>
+                <!-- Graduation Project link removed from dropdown -->
+            </div>
+        </div>
+       
+        <div class="navbar-item" id="searchNavItem">
+            <button id="searchButton" type="button">
+                <i class="fas fa-search"></i> <span class="button-text">Search Topics</span>
+            </button>
+            <div id="searchInputWrapper" style="display: none;">
+                <input type="text" id="searchInput" placeholder="e.g., UX, Data">
+                <button id="executeSearchButton" type="button" aria-label="Execute Search"><i class="fas fa-arrow-right"></i></button>
+                <button id="cancelSearchButton" type="button" aria-label="Cancel Search"><i class="fas fa-times"></i></button>
+                <div id="searchResultsContainer" class="search-results-container" style="display: none;">
+                    <!-- Suggestions will be populated here -->
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <button id="shareButton" type="button"><i class="fas fa-share-alt"></i> <span class="button-text">Share</span></button>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section id="about-me" class="portfolio-section">
+        <h2 class="section-title-with-icon"><i class="fas fa-id-card"></i> About Me</h2>
+
+        <div class="about-me-intro">
+            <div class="profile-header-container">
+                <img src="ARM.jpg" alt="Peerawit Bootsa" class="about-me-profile-pic"> <!-- <<<<<<<<<<<<<<<<<<<< ใส่ชื่อไฟล์รูปภาพของคุณตรงนี้ -->
+                <div class="profile-name-title">
+                    <h3>Peerawit Bootsa</h3>
+                    <p class="profile-subtitle">Computer Science Student | Aspiring Developer</p>
+                </div>
+            </div>
+            <div class="about-me-narrative">
+                <h4><i class="fas fa-quote-left"></i> A Little About Myself</h4>
+                <p>
+                    A Computer Science graduate from Thammasat University with a strong interest in integrating technology, data, and user experience (UX) to solve real-world problems. Throughout my studies, I have developed several projects that reflect my commitment to sustainability, digital innovation, and data-driven solutions.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-me-details-grid">
+            <!-- Personal Information Card -->
+            <div class="about-me-card personal-info-card">
+                <h4><i class="fas fa-user-circle"></i> Personal Information</h4>
+                <ul>
+                    <li><i class="fas fa-user fa-fw"></i> <strong>Name:</strong><span>Peerawit Bootsa</span></li>
+                    <li><i class="fas fa-graduation-cap fa-fw"></i> <strong>Major:</strong><span>Computer Science</span></li>
+                    <li><i class="fas fa-phone fa-fw"></i> <strong>Phone:</strong><span>083 995 6985</span></li>
+                    <li><i class="fas fa-envelope fa-fw"></i> <strong>Email:</strong><span><a href="mailto:peerawit.boo44@gmail.com">peerawit.boo44@gmail.com</a></span></li>
+                    <li><i class="fab fa-github fa-fw"></i> <strong>GitHub:</strong><span><a href="https://github.com/armpeewit" target="_blank" rel="noopener noreferrer">github.com/armpeerwit</a></span></li>
+                    <li><i class="fab fa-line fa-fw"></i> <strong>LINE ID:</strong><span>arm22043813</span></li>
+                    <li><i class="fas fa-map-marker-alt fa-fw"></i> <strong>Address:</strong><span>82/94 Habitia Village, Bang Chan, Khlong Sam Wa, Bangkok 10510</span></li>
+                </ul>
+            </div>
+
+            <!-- Education Card -->
+            <div class="about-me-card education-card">
+                <h4><i class="fas fa-university"></i> Education</h4>
+                <p><i class="fas fa-building fa-fw"></i> <strong>Institution:</strong><span>&nbsp;&nbsp;Thammasat University, Rangsit Campus</span></p>
+                <p><i class="fas fa-award fa-fw"></i> <strong>Degree:</strong><span>&nbsp;&nbsp;Bachelor of Science in Computer Science</span></p>
+                <p><i class="fas fa-calendar-check fa-fw"></i> <strong>&nbsp;&nbsp;Expected Graduation:</strong><span>2025</span></p>
+                <h5><i class="fas fa-book-open"></i> Relevant Coursework:</h5>
+                <ul>
+                    <li><i class="fas fa-code-branch fa-fw"></i> Data Structures</li>
+                    <li><i class="fas fa-database fa-fw"></i> Database Systems</li>
+                    <li><i class="fas fa-laptop-code fa-fw"></i> Web Development</li>
+                    <li><i class="fas fa-chart-bar fa-fw"></i> Data Analytics</li>
+                </ul>
+            </div>
+
+            <!-- Skills Card -->
+            <div class="about-me-card skills-card">
+                <h4><i class="fas fa-tools"></i> Skills</h4>
+                <h5><i class="fas fa-code"></i> Languages & Tools:</h5>
+                <ul>
+                    <li></i> HTML, </i> CSS,</i> JavaScript, </i> Java</li>
+                </ul>
+                <h5><i class="fas fa-server"></i> Database & Server:</h5>
+                <ul>
+                    <li><i class="fas fa-database fa-fw"></i> XAMPP (Apache, MySQL)</li>
+                </ul>
+                <h5><i class="fas fa-drafting-compass"></i> Design & Prototyping:</h5>
+                <ul>
+                    <li><i class="fab fa-adobe fa-fw"></i> Adobe XD</li>
+                </ul>
+                <h5><i class="fas fa-chart-pie"></i> Data Visualization:</h5>
+                <ul>
+                    <li><i class="fas fa-chart-line fa-fw"></i> Tableau, Power BI</li>
+                </ul>
+            </div>
+
+            <!-- Internship Card -->
+            <div class="about-me-card internship-card">
+                <h4><i class="fas fa-briefcase"></i> Internship Experience</h4>
+                <h5>Intern - Software Developer</h5>
+                <p class="internship-company"><i class="fas fa-building fa-fw"></i> <strong>Company:</strong> &nbsp;&nbsp;PI Securities Public Company Limited (2022)</p>
+                <ul>
+                    <li><i class="fas fa-cogs fa-fw"></i> Worked in the backend integration team</li>
+                    <li><i class="fas fa-link fa-fw"></i> Integrated internal financial systems with LINE Official Account</li>
+                    <li><i class="fas fa-robot fa-fw"></i> Utilized APIs for automated communication</li>
+                    <li><i class="fas fa-project-diagram fa-fw"></i> Gained experience with DevOps and live financial systems</li>
+                </ul>
+            </div>
+
+            <!-- External Links Card -->
+            <div class="about-me-card external-links-card">
+                <h4><i class="fas fa-external-link-alt"></i> Related Links</h4>
+                <div class="external-links-container">
+                    <a href="https://github.com/armpeewit/ABOUT-ME" target="_blank" rel="noopener noreferrer" class="external-link-button">
+                        <i class="fab fa-github"></i> View Project on GitHub
+                    </a>
+                    <!-- Resume Preview and Download Section -->
+                    <div class="resume-item-container">
+                        <h5 class="resume-title"><i class="fas fa-id-badge"></i> My Resume</h5>
+                        <div class="resume-pdf-preview">
+                            <iframe src="Resume.pdf" type="application/pdf" width="100%" height="200px"> <!-- ปรับ height ตรงนี้ได้ -->
+                                <p>Your browser does not support PDF previews. You can <a href="Resume.pdf" download="Peerawit_Bootsa_Resume.pdf">download the Resume</a> to view it.</p>
+                            </iframe>
+                        </div>
+                        <a href="Resume.pdf" download="Peerawit_Bootsa_Resume.pdf" class="external-link-button resume-download-button">
+                            <i class="fas fa-download"></i> Download Resume (.pdf)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ux-ui" class="portfolio-section">
+        <h2>UX/UI</h2>
+
+        <!-- Project 1: University Indoor Navigation Assistant -->
+        <div class="project-container ux-ui-project">
+            <h3><i class="fas fa-map-signs"></i> University Indoor Navigation Assistant</h3>
+            <img src="ux1.png" alt="University Indoor Navigation Assistant Mockup" class="ux-project-main-image">
+            <div class="project-header">
+                <h4><i class="fas fa-search-location"></i> Overview</h4>
+                <p>The CS302-Midterm project proposes a digital solution to help new students navigate the university campus, specifically identifying buildings and classrooms more efficiently. The core idea revolves around replacing or enhancing traditional paper maps with a campus-specific mobile navigation system.</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-users"></i> User-Centered Approach</h4>
+                    <ul>
+                        <li><strong>Target Users:</strong> New students at Thammasat University who struggle to locate classrooms.</li>
+                        <li><strong>Pain Point:</strong> Difficulty in finding unfamiliar locations within a large campus using static paper maps.</li>
+                        <li><strong>Solution:</strong> A mobile-based, interactive navigation assistant tailored to the university’s layout.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-brain"></i> UX Strategies Applied</h4>
+                    <ul>
+                        <li><strong>User-Centered Design:</strong> Focused on the experience of new students with minimal prior knowledge of campus geography.</li>
+                        <li><strong>Comparative Platform Design:</strong> Considered UX variations between iOS and Android platforms.</li>
+                        <li><strong>Context-Aware Design:</strong> Leveraged the Google Maps API and indoor navigation features to enhance spatial understanding.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-palette"></i> UI/Interaction Concepts</h4>
+                    <ul>
+                        <li>Map interface showing buildings and rooms (SC-2, SC-3, LC-2).</li>
+                        <li>Simple navigation flows with minimal steps.</li>
+                        <li>Possibly implemented as a Progressive Web App or native mobile app.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-check-circle"></i> UX Takeaways</h4>
+                    <ul>
+                        <li>Reduce cognitive load through clear map visuals and orientation.</li>
+                        <li>Improve efficiency by replacing static maps with real-time digital guidance.</li>
+                        <li>Design with mobile in mind, as students mainly access tools via smartphones.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PDF Embed Placeholder -->
+            <div class="pdf-embed-container" style="margin-top: 20px;">
+                <h4><i class="fas fa-file-pdf"></i> Project Document</h4>
+                <div class="pdf-preview" style="border: 1px solid #ddd; background-color: #f9f9f9; margin-bottom:10px; border-radius: 4px;">
+                    <p style="padding: 20px; text-align: center; color: #777;">
+                        <!-- >>>>> แทนที่ src ใน iframe นี้ด้วย path ไปยังไฟล์ PDF ของคุณ <<<<< -->
+                        <iframe src="CS302-Midterm.pdf" type="application/pdf" width="100%" height="200px">
+                            Your browser does not support PDF previews. You can <a href="CS302-Midterm.pdf" download="CS302-Midterm_Report.pdf" style="color: #007bff;">download the Document</a> to view it.
+                        </iframe>
+                    </p>
+                </div>
+                <a href="CS302-Midterm.pdf" download="CS302-Midterm_Report.pdf" class="pdf-download-button">
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 2: COVID-19 Vaccine Booking Application -->
+        <div class="project-container ux-ui-project" style="margin-top: 40px;">
+            <h3><i class="fas fa-shield-virus"></i> COVID-19 Vaccine Booking Application (myVaccine)</h3>
+            <img src="ux2.png" alt="COVID-19 Vaccine Booking App Mockup" class="ux-project-main-image">
+            <div class="project-header">
+                <h4><i class="fas fa-syringe"></i> Overview</h4>
+                <p>The myVaccine project centers on designing a mobile application that enables the public to register for COVID-19 vaccinations easily, regardless of their technological literacy. The design emphasizes inclusivity, simplicity, and accessibility.</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-user-friends"></i> Persona-Driven Design</h4>
+                    <p>Three personas were crafted to reflect diverse user needs:</p>
+                    <ol style="margin-left: 20px;">
+                        <li><strong>Bank Employee (tech-savvy)</strong> – Needs quick, flexible booking.</li>
+                        <li><strong>Market Vendor (low-tech)</strong> – Needs a simple, guided process.</li>
+                        <li><strong>Student (tech expert)</strong> – Books vaccines for the entire family.</li>
+                    </ol>
+                    <p>This ensured the app design accommodates a wide range of user experiences.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-cogs"></i> UX Techniques Applied</h4>
+                    <ul>
+                        <li><strong>Inclusive Design:</strong> Designed interfaces for both digital natives and tech-averse users.</li>
+                        <li><strong>Progressive Disclosure:</strong> Broke tasks into small, manageable steps (e.g., registration → verification → confirmation).</li>
+                        <li><strong>Visual Guidance:</strong> Included video tutorials and tooltips for better onboarding.</li>
+                        <li><strong>Error Prevention:</strong> Used field hints, format validation, and clear instructions.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-comments"></i> UI Components & Dialogue Styles</h4>
+                    <ul>
+                        <li><strong>Form Fill-in:</strong> For personal info and OTP verification.</li>
+                        <li><strong>Menu Selection:</strong> Used in initial navigation and final confirmation screens.</li>
+                        <li><strong>Q&A Elements:</strong> Helped users recover or resend OTP codes.</li>
+                        <li><strong>Video Assistance:</strong> Provided for low-tech users to follow instructions visually.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-check-circle"></i> UX Takeaways</h4>
+                    <ul>
+                        <li>Designing for digital inequality is essential in public health apps.</li>
+                        <li>Visual education (VDO demos) can significantly improve onboarding success.</li>
+                        <li>Simplifying interfaces and providing feedback builds user trust and confidence.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PDF Embed Placeholder -->
+            <div class="pdf-embed-container" style="margin-top: 20px;">
+                <h4><i class="fas fa-file-pdf"></i> Project Document</h4>
+                <div class="pdf-preview" style="border: 1px solid #ddd; background-color: #f9f9f9; margin-bottom:10px; border-radius: 4px;">
+                    <p style="padding: 20px; text-align: center; color: #777;">
+                        <!-- >>>>> แทนที่ src ใน iframe นี้ด้วย path ไปยังไฟล์ PDF ของคุณ <<<<< -->
+                        <iframe src="myVacc.pdf" type="application/pdf" width="100%" height="200px">
+                            Your browser does not support PDF previews. You can <a href="myVacc.pdf" download="COVID-19_Vaccine_Booking_App_Report.pdf" style="color: #007bff;">download the Document</a> to view it.
+                        </iframe>
+                    </p>
+                </div>
+                <a href="myVacc.pdf" download="myVacc.pdf" class="pdf-download-button">
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- Key UX/UI Insights from Both Projects -->
+        <div class="project-container ux-ui-insights" style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #eee;">
+            <h3><i class="fas fa-lightbulb"></i> Key UX/UI Insights from Both Projects</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-user-cog"></i> User-Centered Thinking</h4>
+                    <p>Both projects were driven by real-world problems faced by specific users.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-mobile-alt"></i> Mobile-First Design</h4>
+                    <p>UI designs were mobile-oriented for real-life use scenarios.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-universal-access"></i> Inclusive UX</h4>
+                    <p>myVaccine demonstrates strong inclusivity across tech literacy levels.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-stream"></i> Progressive Flow</h4>
+                    <p>Each interface minimized confusion by breaking down tasks clearly.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-tools"></i> Applicable Tools</h4>
+                    <p>Figma, Adobe XD (for design); React Native, Flutter (for development).</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="data-analysis" class="portfolio-section">
+        <h2><i class="fas fa-chart-line"></i> Data Analysis</h2>
+
+        <!-- Project 1: Analysis of Soy Milk Consumer Behavior -->
+        <div class="project-container data-analysis-project">
+            <h3><i class="fas fa-seedling"></i> Project Analysis of Soy Milk Consumer Behavior</h3>
+            <img src="data1.png" alt="Soy Milk Consumer Behavior Analysis" class="ux-project-main-image"> <!-- << ใส่ path รูปของคุณที่นี่ -->
+
+            <div class="project-header" style="text-align: left; margin-bottom: 1.5rem;">
+                <h4><i class="fas fa-binoculars"></i> Overview</h4>
+                <p style="text-align: left; max-width: none;">This project is an analysis of survey data aimed at understanding the market and behavior of soy milk consumers, a common case study in market analysis.</p>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-bullseye"></i> Project Objectives</h4>
+                    <p>The project has clear goals to answer business questions, including:</p>
+                    <ul>
+                        <li><i class="fas fa-poll"></i> To analyze the soy milk drinking behavior of consumers.</li>
+                        <li><i class="fas fa-users"></i> To study the popularity of soy milk across different age groups.</li>
+                        <li><i class="fas fa-balance-scale-right"></i> To understand the factors influencing purchase decisions.</li>
+                        <li><i class="fas fa-dollar-sign"></i> To explore the price points that consumers are willing to pay.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-cogs"></i> Data Analysis Process</h4>
+                    <div class="content-preview">
+                        <h5><i class="fas fa-database"></i> Data Collection:</h5>
+                        <p>Data was gathered via a questionnaire covering demographics, consumption behavior, preferences, and purchasing factors...</p>
+                        <h5><i class="fas fa-broom"></i> Data Cleansing:</h5>
+                        <p>A critical step involving handling missing values and irrelevant data to ensure high quality analysis...</p>
+                        <h5><i class="fas fa-chart-bar"></i> Descriptive Analysis:</h5>
+                        <p>Used descriptive statistics to summarize data, identifying target audiences, behaviors, key factors, popular brands, and optimal pricing...</p>
+                    </div>
+                    <div class="full-content" style="display: none;">
+                        <!-- เนื้อหาเต็มจะอยู่ที่นี่ -->
+                        <h5><i class="fas fa-database"></i> Data Collection:</h5>
+                        <p>Data was gathered via a questionnaire covering demographics (age, gender, income), consumption behavior (frequency, timing), preferences (brands, ingredients), and purchasing factors (taste, price, health).</p>
+                        <h5><i class="fas fa-broom"></i> Data Cleansing:</h5>
+                        <p>A critical step. The document mentions handling missing values and irrelevant data, such as dropping records of individuals who do not drink soy milk or drink it less than once a month. This ensures the analyzed data is of high quality and reflects the actual target audience.</p>
+                        <h5><i class="fas fa-chart-bar"></i> Descriptive Analysis:</h5>
+                        <p>The team used descriptive statistics to summarize and explain the data's characteristics through bar charts, making it easy to see the big picture:</p>
+                        <ul>
+                            <li><strong>Primary Target Audience:</strong> Predominantly female (69%), with the largest age group being 25-29 years old, and a majority earning between 15,000 - 30,000 THB.</li>
+                            <li><strong>Behavior:</strong> Most consumers drink soy milk when they feel hungry or as a breakfast meal, and not necessarily on a daily basis.</li>
+                            <li><strong>Key Factors:</strong> "Taste" is the most influential purchasing factor, followed by "health benefits" and "ease of purchase".</li>
+                            <li><strong>Popular Brands:</strong> Vitamilk and Lactasoy are the most popular brands in the market.</li>
+                            <li><strong>Optimal Price:</strong> Most consumers are willing to pay a price of around 25 THB.</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="read-more-btn">Read More <i class="fas fa-angle-double-right"></i></button>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-laptop-code"></i> Knowledge and Technology Used</h4>
+                    <h5><i class="fas fa-brain"></i> Knowledge:</h5>
+                    <p>Market Research, Consumer Behavior Analysis, Descriptive Statistics, Data Visualization principles, and Data Cleaning techniques.</p>
+                    <h5><i class="fas fa-tools"></i> Technology:</h5>
+                    <p>Although not explicitly stated, it's likely that tools like Microsoft Excel or Google Sheets were used for creating charts. Alternatively, a statistical program or programming language like Python (with libraries such as Pandas, Matplotlib) or R could have been used.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-lightbulb"></i> What Was Learned from This Project?</h4>
+                    <p>This project demonstrates how to transform raw data from a survey into actionable insights that are valuable for a business. These insights can inform marketing strategies, such as defining target audiences, developing products that match taste preferences, highlighting health benefits in campaigns, and setting appropriate prices to enhance competitiveness.</p>
+                </div>
+            </div>
+
+            <div class="pdf-embed-container" style="margin-top: 20px;">
+                <h4><i class="fas fa-file-pdf"></i> Project Document</h4>
+                <div class="pdf-preview">
+                    <iframe src="Soy drink dataset with explanationFile.pdf" type="application/pdf" width="100%" height="200px"> <!-- << ใส่ path PDF ของคุณที่นี่ -->
+                        Your browser does not support PDF previews. You can <a href="Soy drink dataset with explanationFile.pdf" download="Soy_Milk_Consumer_Behavior_Report.pdf" style="color: #007bff;">download the Document</a> to view it.
+                    </iframe>
+                </div>
+                <a href="Soy drink dataset with explanationFile.pdf" download="Soy_Milk_Consumer_Behavior_Report.pdf" class="pdf-download-button"> <!-- << ใส่ path PDF และชื่อไฟล์ดาวน์โหลดของคุณที่นี่ -->
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 2: Statistical Modeling with Coin Toss Data -->
+        <div class="project-container data-analysis-project" style="margin-top: 40px;">
+            <h3><i class="fas fa-dice"></i> Statistical Modeling with Coin Toss Data</h3>
+            <img src="data2.png" alt="Statistical Modeling with Coin Toss Data" class="ux-project-main-image"> <!-- << ใส่ path รูปของคุณที่นี่ -->
+
+            <div class="project-header" style="text-align: left; margin-bottom: 1.5rem;">
+                <h4><i class="fas fa-binoculars"></i> Overview</h4>
+                <p style="text-align: left; max-width: none;">This project is a fundamental exercise in statistics and probability, aiming to show that random phenomena in the real world can be described or "modeled" by theoretical probability distributions.</p>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-bullseye"></i> Project Objectives</h4>
+                    <ul>
+                        <li><i class="fas fa-vial"></i> To test and demonstrate that data from a coin-tossing experiment aligns with two specific probability distributions: the Binomial Distribution and the Geometric Distribution.</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-calculator"></i> Analysis and Modeling Process</h4>
+                     <div class="content-preview">
+                        <p>This project uses two datasets from a coin-tossing experiment to demonstrate alignment with Binomial and Geometric distributions...</p>
+                        <h5><i class="fas fa-coins"></i> Dataset 1 (Binomial Distribution):</h5>
+                        <p>Analyzed the number of "heads" from 10 coin tosses, showing a bell-shaped distribution characteristic of the Binomial model...</p>
+                        <h5><i class="fas fa-chart-area"></i> Dataset 2 (Geometric Distribution):</h5>
+                        <p>Examined tosses until the first head, with frequency decreasing as trials increase, typical of the Geometric model...</p>
+                    </div>
+                    <div class="full-content" style="display: none;">
+                        <!-- เนื้อหาเต็มจะอยู่ที่นี่ -->
+                        <p>The project uses two datasets from a coin-tossing experiment involving 73 students.</p>
+                        <h5><i class="fas fa-coins"></i> Dataset 1 (Binomial Distribution):</h5>
+                        <ul>
+                            <li><strong>Data:</strong> The number of "heads" obtained from 10 tosses of a coin.</li>
+                            <li><strong>Principle:</strong> This scenario fits the Binomial Distribution because it involves a fixed number of independent trials (n=10), with only two possible outcomes for each trial (success=heads, failure=tails).</li>
+                            <li><strong>Analysis:</strong> The created frequency histogram shows a bell-shaped distribution, with the peak centered in the middle (around 4-6 heads), which is a characteristic feature of the Binomial Distribution.</li>
+                        </ul>
+                        <h5><i class="fas fa-chart-area"></i> Dataset 2 (Geometric Distribution):</h5>
+                        <ul>
+                            <li><strong>Data:</strong> The number of tosses required "until" the first head appeared.</li>
+                            <li><strong>Principle:</strong> This scenario corresponds to the Geometric Distribution, which is used to model the number of trials needed to get the first success.</li>
+                            <li><strong>Analysis:</strong> The frequency graph for this dataset shows that the lowest number of trials (1 trial) has the highest frequency, and the frequency decreases as the number of trials increases. This is the classic shape of a Geometric Distribution.</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="read-more-btn">Read More <i class="fas fa-angle-double-right"></i></button>
+             
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-laptop-code"></i> Knowledge and Technology Used</h4>
+                    <h5><i class="fas fa-brain"></i> Knowledge:</h5>
+                    <p>Probability Theory, Statistics, Binomial Distribution, Geometric Distribution, Statistical Modeling.</p>
+                    <h5><i class="fab fa-python"></i> Technology:</h5>
+                    <p>The document explicitly shows code snippets like <code>plt.bar(...)</code> and <code>plt.show()</code>, clearly indicating the use of the Python programming language and its visualization library, Matplotlib, for analysis and plotting.</p>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-lightbulb"></i> What Was Learned from This Project?</h4>
+                    <p>This project teaches one of the most fundamental concepts in Data Science: finding mathematical models to describe data. Understanding the distribution of data is a crucial foundation for more advanced analysis, such as Hypothesis Testing, Prediction, and Simulation. It represents the step from merely "describing" data to "understanding" the process that generates it.</p>
+                </div>
+            </div>
+
+            <div class="pdf-embed-container" style="margin-top: 20px;">
+                <h4><i class="fas fa-file-pdf"></i> Project Document</h4>
+                <div class="pdf-preview">
+                    <iframe src="Quiz 5 Modeling.pdf" type="application/pdf" width="100%" height="200px"> <!-- << ใส่ path PDF ของคุณที่นี่ -->
+                        Your browser does not support PDF previews. You can <a href="coin-toss-modeling-report.pdf" download="Coin_Toss_Modeling_Report.pdf" style="color: #007bff;">download the Document</a> to view it.
+                    </iframe>
+                </div>
+                <a href="Quiz 5 Modeling.pdf" download="Quiz 5 Modeling.pdf" class="pdf-download-button"> <!-- << ใส่ path PDF และชื่อไฟล์ดาวน์โหลดของคุณที่นี่ -->
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="backend-dev" class="portfolio-section">
+        <h2>Backend Development</h2>
+        <div class="project-container ux-ui-project">
+            <h3><i class="fas fa-map-signs"></i> Instagram clone</h3>
+            <img src="ig.png" alt="University Indoor Navigation Assistant Mockup" class="ux-project-main-image">
+            <div class="project-header">
+                <h4><i class="fas fa-search-location"></i> Overview</h4>
+                <p>This project focuses on the development of an Instagram clone, with a particular emphasis on the backend. The backend development workflow is structured to ensure continuous integration and deployment, encompassing several key stages</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4><i class="fas fa-users"></i> Setting up Environment Variables</h4>
+                    <ul>
+                        <li><strong>Target Users:</strong> Before the backend application can function correctly, it requires specific configurations, especially for database connectivity. This step involves securely setting up environment variables within the ./Backend directory. Essential secrets such as ENV_PORT, ENV_DB_USERNAME, ENV_DB_PASSWORD, ENV_DB_NAME, and ENV_TOKEN_KEY are echoed into an .env file. This process ensures that sensitive information is not directly hardcoded into the application and can be managed efficiently, especially in different deployment environments.
+</li>
+    
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-brain"></i> Installing Node Modules and Starting the Server (Build & Run)</h4>
+                    <ul>
+                        <li><strong>User-Centered Design:</strong> environment variables are configured, the next crucial step is to prepare the backend application for execution. This involves navigating to the ./Backend directory and installing all the necessary dependencies defined in the project's package.json file by running npm install. After the modules are successfully installed, the server is initiated using the npm start & command. The & symbol ensures that the server runs in the background, allowing subsequent tasks in the CI/CD pipeline to proceed without interruption.
+</li>
+                       
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-palette"></i> Running Backend Tests (Test)</h4>
+                    <ul>
+                        <li>A critical phase in backend development is rigorous testing to ensure the application's stability and correctness. This stage involves executing predefined test cases for the backend system. The command npm test is run within the ./Backend directory to initiate these tests. Upon successful completion of all test cases, a notification is automatically sent to the team chat, indicating the success of the backend tests with a message like "(Backend) Test Succeeded!" and providing details such as the event type, repository, branch, workflow, author, committer, and commit URL, along with a timestamp. This automated notification is vital for quick feedback and collaboration among the development team.</li>
+                        
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h4><i class="fas fa-check-circle"></i> Building and Pushing to Docker Hub</h4>
+                    <ul>
+                        <li>backend tests pass successfully, the application is packaged into a Docker image, which is a lightweight, standalone, and executable package of software that includes everything needed to run it. Using the docker/build-push-action@v2 action, the backend application, located in the ./Backend context, is built and then pushed to Docker Hub. The image is tagged as 11sf/ig_clone_backend:latest, making it readily available for deployment to various environments. This containerization step is essential for ensuring consistency across development, testing, and production environments, and it plays a significant role in enabling continuous deployment.
+</li>
+                       
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PDF Embed Placeholder -->
+            <div class="pdf-embed-container" style="margin-top: 20px;">
+                <h4><i class="fas fa-file-pdf"></i> Project Document</h4>
+                <div class="pdf-preview" style="border: 1px solid #ddd; background-color: #f9f9f9; margin-bottom:10px; border-radius: 4px;">
+                    <p style="padding: 20px; text-align: center; color: #777;">
+                        <!-- >>>>> แทนที่ src ใน iframe นี้ด้วย path ไปยังไฟล์ PDF ของคุณ <<<<< -->
+                        <iframe src="ig clone.pdf" type="application/pdf" width="100%" height="200px">
+                            Your browser does not support PDF previews. You can <a href="ig clone.pdf" download="ig clone.pdf" style="color: #007bff;">download the Document</a> to view it.
+                        </iframe>
+                    </p>
+                </div>
+                <a href="ig clone.pdf" download="ig clone.pdf" class="pdf-download-button">
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
+                <br>
+                <br>
+                <a href="https://github.com/11SF/ig-clone-backend.git" target="_blank" rel="noopener noreferrer" class="external-link-button">
+                        <i class="fab fa-github"></i> View Project on GitHub
+                    </a>
+            </div>
+        </div>
+    </section>
+    <section id="graduation-project" class="portfolio-section">
+        <h2>Graduation Project</h2>
+        <div class="project-container">
+            <div class="project-header">
+                <h3>TRASH HAS VALUE</h3>
+                <p class="project-objective">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project aims to develop a centralized website for the trading of recyclable materials, supporting sustainable resource management and promoting a circular economy. The website is designed to connect buyers and sellers of recyclables through an easy-to-use system that encourages community participation. Key features include real-time transaction status updates, a point-based reward system to motivate users, and a price comparison tool from multiple sellers to help buyers choose the best deal.
+
+Additionally, the platform includes a webboard that serves as a space for exchanging information, knowledge, and experiences related to recycling. This feature helps foster a better understanding of effective waste management. The platform is designed to meet the needs of both buyers and sellers—not only improving the efficiency of recycling transactions but also cultivating a community with strong environmental awareness.</p>
+                <!-- PDF Embed Section -->
+                <div class="pdf-embed-container">
+                    <h4><i class="fas fa-file-pdf"></i> Project Report</h4>
+                    <div class="pdf-preview">
+                        <iframe src="file.pdf" type="application/pdf" width="100%" height="200px">
+                            <p style="padding: 20px; text-align: center;">
+                                Your browser does not support viewing PDF files directly.<br>
+                                You can <a href="file.pdf" target="_blank" rel="noopener noreferrer">try to open it in a new tab</a> or <a href="file.pdf" download="TRASH_HAS_VALUE_Project_Report.pdf">download the PDF</a> to view it.
+                            </p>
+                        </iframe>
+                    </div>
+                    <a href="file.pdf" download="TRASH_HAS_VALUE_Project_Report.pdf" class="pdf-download-button">
+                        <i class="fas fa-download"></i> Download Full Report (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card features-card">
+                    <h4><i class="fas fa-lightbulb"></i> Key Website Features</h4>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> Real-time trading status display system</li>
+                        <li><i class="fas fa-star"></i> Points collection system to incentivize recycling</li>
+                        <li><i class="fas fa-balance-scale"></i> Seller price comparison system for buyers to choose the best offers</li>
+                        <li><i class="fas fa-users"></i> System for creating groups to collect recyclable materials from multiple users</li>
+                        <li><i class="fas fa-comments"></i> Web board for exchanging knowledge and news</li>
+                        <li><i class="fas fa-user-shield"></i> Secure user data management system</li>
+                    </ul>
+                </div>
+
+                <div class="project-card tech-stack-card">
+                    <h4><i class="fas fa-cogs"></i> Technologies Used</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> HTML, CSS, JavaScript, jQuery</li>
+                        <li><strong>Backend:</strong> PHP, MySQL</li>
+                        <li><strong>Web Board System:</strong> RESTful API</li>
+                        <li><strong>Development Plan:</strong> Google Maps API, AI for image-based waste type detection</li>
+                    </ul>
+                </div>
+
+                <div class="project-card results-card">
+                    <h4><i class="fas fa-puzzle-piece"></i> Outcomes and Future Development</h4>
+                    <ul>
+                        <li><i class="fas fa-trash-alt"></i> Helps reduce improperly disposed waste</li>
+                        <li><i class="fas fa-hand-holding-usd"></i> Increases income opportunities from recyclable waste</li>
+                        <li><i class="fas fa-network-wired"></i> Builds a network among recyclers</li>
+                        <li><i class="fas fa-bullseye"></i> Preparing to develop map systems, AI, notifications, and CSR organization connections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card image-guidelines-card">
+                <h4><i class="fas fa-images"></i> Image Selection Guidelines</h4>
+                <p class="guidelines-note"><em>(Note: This section provides guidelines for reports/posters, not a direct website feature.)</em></p>
+                <ol>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Trading Page</strong>
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> For general users, this page allows the creation of collection groups. Users should input a group name and a description of the material to be collected (e.g., plastic or paper), select the material type, and specify the minimum quantity required. The group should also define the collection area and duration, as well as choosing transportation methods and group management options (e.g., limiting members or allowing open participation).</span>
+                        </div>
+                        <img src="1.png" alt="Recyclable material trading example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Buyer Selection Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> Once the selection is confirmed, the system will display the buyer's information, which they have provided. This aims to increase the seller's awareness of waste recycling. Sellers can view buyer activity or subscribe to a buyer's membership before confirming the sale.</span>
+                        </div>
+                        <img src="2.png" alt="Gamification example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>General User Status Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> This page displays accumulated recycling points to incentivize users. It also shows the buyer's status, arrival time, and current status.</span>
+                        </div>
+                        <img src="3.png" alt="Community discussion example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>For Organizations and Waste Management Agencies (Buyers)</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> Buyers can set their desired price per kilogram or minimum purchase quantity. On the right side, information is provided to sellers as an incentive to sell, detailing the potential value of the waste item.</span>
+                        </div>
+                        <img src="4.png" alt="Community recycling example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Buyer Status Display Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> This page shows the seller's status and personal information. Buyers can select their own status to inform the seller.</span>
+                        </div>
+                        <img src="5.png" alt="Community recycling example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Webboard Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> The webboard page allows users to discuss and exchange information about waste management, recycling techniques, and recommendations for reliable sellers or buyers. It also facilitates sharing news and ideas related to community sustainability, helping to build networks among users and promote efficient recycling.</span>
+                        </div>
+                        <img src="8.png" alt="Community recycling example" class="guideline-image">
+                    </li>
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Waste Grouping Example Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> This page allows users to invite others to create a group. The group will set a target for the desired amount of recyclable waste in kilograms. Users within the group can then continually update their contributions until the specified goal is reached.</span>
+                        </div>
+                        <img src="6.png" alt="Community recycling example" class="guideline-image">
+                    </li>
+                    
+                    <li>
+                        <div class="guideline-content">
+                            <strong>Activities Page</strong> 
+                            <span class="guideline-highlight"><i class="fas fa-check-circle"></i> Users can create activities for interested participants to join. Activities can be added through the webboard or the main "All Activities" page.</span>
+                        </div>
+                        <img src="7.png" alt="Website UI mockup example" class="guideline-image">
+                </ol>
+                <a href="https://github.com/armpeewit/Recyclable-Materials-Trading-Website.git" target="_blank" rel="noopener noreferrer" class="external-link-button">
+                        <i class="fab fa-github"></i> View Project on GitHub
+                    </a>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchResultsContainer = document.getElementById('searchResultsContainer');
+
+        function showSection(sectionIdToShow) {
+            const sections = document.querySelectorAll('.portfolio-section');
+            const targetSection = document.getElementById(sectionIdToShow);
+
+            sections.forEach(section => {
+                if (section.id === sectionIdToShow) {
+                    // นี่คือ section เป้าหมาย
+                    section.classList.remove('is-exiting'); // ตรวจสอบให้แน่ใจว่าไม่ได้กำลังจะออก
+                    section.classList.add('active-section'); // เพิ่ม active เพื่อให้สไลด์เข้ามา
+                } else {
+                    // นี่ไม่ใช่ section เป้าหมาย
+                    if (section.classList.contains('active-section')) {
+                        // ถ้ามันเคย active อยู่ ให้สั่งให้มันออก
+                        section.classList.remove('active-section');
+                        section.classList.add('is-exiting');
+                    }
+                    // ไม่ต้องทำอะไรกับ section อื่นๆ ที่ไม่ active และไม่ใช่เป้าหมาย
+                    // มันจะคงสถานะ opacity 0 และ transform translateX(100%) จาก CSS หลัก
+                }
+            });
+        }
+
+        showSection('about-me'); // Show about-me section by default
+
+        const homeLink = document.getElementById('homeLink');
+        if (homeLink) {
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                showSection('about-me');
+            });
+        }
+
+        // Dropdown Menu Logic
+        const projectDropdownButton = document.querySelector('.dropdown .dropbtn');
+        const projectDropdownContent = document.querySelector('.dropdown .dropdown-content');
+
+        if (projectDropdownButton && projectDropdownContent) {
+            projectDropdownButton.addEventListener('click', function(event) {
+                event.stopPropagation();
+                projectDropdownContent.classList.toggle('open');
+            });
+        }
+
+        // Graduation Project Nav Button Logic
+        const navGraduationProjectButton = document.getElementById('navGraduationProjectButton');
+        if (navGraduationProjectButton) {
+            navGraduationProjectButton.addEventListener('click', () => {
+                showSection('graduation-project');
+                // Close dropdown if open (good practice)
+                if (projectDropdownContent && projectDropdownContent.classList.contains('open')) {
+                    projectDropdownContent.classList.remove('open');
+                }
+            });
+        }
+
+        // Combined click listener for closing dropdown and search suggestions
+        document.addEventListener('click', function(event) {
+            // Close project dropdown
+            if (projectDropdownButton && projectDropdownContent) {
+                if (!projectDropdownButton.contains(event.target) && !projectDropdownContent.contains(event.target)) {
+                    if (projectDropdownContent.classList.contains('open')) {
+                        projectDropdownContent.classList.remove('open');
+                    }
+                }
+            }
+
+            // Close search suggestions if search input is visible and click is outside search area
+            // Variables searchInputWrapper and searchButton are defined later but accessible due to closure
+            if (typeof searchInputWrapper !== 'undefined' && searchInputWrapper &&
+                typeof searchResultsContainer !== 'undefined' && searchResultsContainer &&
+                typeof searchButton !== 'undefined' && searchButton) {
+                if (searchInputWrapper.style.display !== 'none' &&
+                    searchResultsContainer.style.display !== 'none' &&
+                    !searchInputWrapper.contains(event.target) &&
+                    !searchResultsContainer.contains(event.target) &&
+                    !searchButton.contains(event.target) /* Ensure clicking search button itself doesn't close suggestions immediately */
+                    ) {
+                    searchResultsContainer.style.display = 'none';
+                }
+            }
+        }); // Corrected: Removed extra '}' that was here
+
+        document.querySelectorAll('.portfolio-link').forEach(link => {
+            link.addEventListener('click', (event) => {
+                // event.preventDefault(); // No need to prevent default if href is just an ID
+                const sectionId = link.getAttribute('href').substring(1);
+                showSection(sectionId);
+                if (projectDropdownContent && projectDropdownContent.classList.contains('open')) {
+                    projectDropdownContent.classList.remove('open');
+                }
+            });
+        });
+
+
+        document.getElementById('shareButton').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out Peerawit Bootsa\'s Portfolio!',
+                    url: window.location.href
+                })
+                .then(() => console.log('Successfully shared!'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                alert('You can copy the current URL to share: ' + window.location.href);
+            }
+        });
+
+        // Search Logic
+        const searchButton = document.getElementById('searchButton');
+        const searchInputWrapper = document.getElementById('searchInputWrapper');
+        const searchInputField = document.getElementById('searchInput');
+        const executeSearchButton = document.getElementById('executeSearchButton');
+        const cancelSearchButton = document.getElementById('cancelSearchButton');
+
+        const sectionsForSearch = [
+            { id: 'ux-ui', title: 'UX/UI', keywords: ['ux', 'ui', 'user experience', 'user interface', 'design', 'figma', 'adobe xd'] },
+            { id: 'data-analysis', title: 'Data Analysis', keywords: ['data', 'analysis', 'analytics', 'statistics', 'python', 'sql', 'r'] },
+            { id: 'backend-dev', title: 'Backend Development', keywords: ['backend', 'back end', 'server', 'database', 'development', 'node.js', 'django'] },
+            { id: 'graduation-project', title: 'Graduation Project', keywords: ['graduation project', 'โปรเจคจบ', 'final project', 'thesis', 'capstone'] }
+        ];
+
+        function renderSuggestions(searchTerm) {
+            if (!searchResultsContainer) {
+                console.error('searchResultsContainer not found');
+                return;
+            }
+            searchResultsContainer.innerHTML = '';
+            if (!searchTerm.trim()) {
+                searchResultsContainer.style.display = 'none';
+                return;
+            }
+
+            const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+            const matchedSections = sectionsForSearch.filter(section => {
+                const sectionTitle = section.title ? section.title.toLowerCase() : '';
+                return sectionTitle.includes(normalizedSearchTerm) ||
+                       (section.keywords && section.keywords.some(kw => kw.toLowerCase().includes(normalizedSearchTerm)));
+            });
+
+            if (matchedSections.length > 0) {
+                matchedSections.forEach(section => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.classList.add('suggestion-item');
+                    suggestionItem.textContent = section.title;
+                    suggestionItem.addEventListener('click', () => {
+                        showSection(section.id);
+                        if(searchInputWrapper) searchInputWrapper.style.display = 'none';
+                        if(searchResultsContainer) searchResultsContainer.style.display = 'none';
+                        if(searchButton) searchButton.style.display = 'flex';
+                        if(searchInputField) searchInputField.value = '';
+                    });
+                    searchResultsContainer.appendChild(suggestionItem);
+                });
+                searchResultsContainer.style.display = 'block';
+            } else {
+                searchResultsContainer.style.display = 'none';
+            }
+        }
+
+        function findAndShowSection(term) {
+            if (searchResultsContainer) {
+                searchResultsContainer.style.display = 'none';
+            }
+            const normalizedTerm = term.toLowerCase().trim();
+
+            if (!normalizedTerm) {
+                if(searchInputWrapper) searchInputWrapper.style.display = 'none';
+                if(searchButton) searchButton.style.display = 'flex';
+                if(searchInputField) searchInputField.value = '';
+                return;
+            }
+
+            for (const section of sectionsForSearch) {
+                const sectionTitle = section.title ? section.title.toLowerCase() : '';
+                if (sectionTitle.includes(normalizedTerm) ||
+                    (section.keywords && section.keywords.some(keyword => keyword.toLowerCase().includes(normalizedTerm)))) {
+                    showSection(section.id);
+                    if(searchInputWrapper) searchInputWrapper.style.display = 'none';
+                    if(searchButton) searchButton.style.display = 'flex';
+                    if(searchInputField) searchInputField.value = '';
+                    return;
+                }
+            }
+            alert('Topic not found: "' + term + '"');
+            if(searchInputWrapper) searchInputWrapper.style.display = 'none';
+            if(searchButton) searchButton.style.display = 'flex';
+            if(searchInputField) searchInputField.value = '';
+        }
+
+        if (searchButton && searchInputWrapper && searchInputField && executeSearchButton && cancelSearchButton) {
+            searchButton.addEventListener('click', function() {
+                searchButton.style.display = 'none';
+                searchInputWrapper.style.display = 'flex';
+                searchInputField.focus();
+                renderSuggestions(searchInputField.value);
+            });
+
+            cancelSearchButton.addEventListener('click', function() {
+                searchInputWrapper.style.display = 'none';
+                searchButton.style.display = 'flex';
+                if (searchResultsContainer) searchResultsContainer.style.display = 'none';
+                searchInputField.value = '';
+            });
+
+            executeSearchButton.addEventListener('click', function() {
+                findAndShowSection(searchInputField.value);
+            });
+
+            searchInputField.addEventListener('input', function() {
+                renderSuggestions(this.value);
+            });
+
+            searchInputField.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Prevent form submission if it were in a form
+                    findAndShowSection(searchInputField.value);
+                }
+            });
+        } // End of Search Logic
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeLightboxButton = document.querySelector('.lightbox-close');
+
+        if (lightbox && lightboxImg && lightboxCaption && closeLightboxButton) {
+            document.querySelectorAll('.guideline-image, .about-me-profile-pic').forEach(image => {
+                image.addEventListener('click', function() {
+                    lightbox.style.display = 'flex'; // Use flex to center content
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt; // Set alt for the lightbox image as well
+
+                    let captionText = this.alt; // Default to alt text
+                    const listItem = this.closest('li');
+                    if (listItem) {
+                        // Try to get caption from the <strong> element within .guideline-content
+                        const guidelineContent = listItem.querySelector('.guideline-content');
+                        if (guidelineContent) {
+                            const strongElement = guidelineContent.querySelector('strong');
+                            if (strongElement) {
+                                captionText = strongElement.textContent.trim();
+                            }
+                        }
+                    }
+                    lightboxCaption.innerHTML = captionText;
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+
+            closeLightboxButton.addEventListener('click', closeLightbox);
+
+            // Close lightbox when clicking on the background (outside the image/caption)
+            lightbox.addEventListener('click', function(event) {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        } // End of Lightbox Logic
+
+            // Content Modal Logic (เพิ่มส่วนนี้เข้าไป)
+        const contentModal = document.getElementById('contentModal');
+        const modalTitleEl = document.getElementById('modalTitle');
+        const modalBodyEl = document.getElementById('modalBody');
+        const closeModalButton = contentModal ? contentModal.querySelector('.modal-close-btn') : null;
+
+        function openContentModal(title, contentHtml) {
+            if (!contentModal || !modalTitleEl || !modalBodyEl) {
+                console.error('Modal elements not found!');
+                return;
+            }
+            modalTitleEl.textContent = title;
+            modalBodyEl.innerHTML = contentHtml;
+            contentModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeContentModal() {
+            if (!contentModal) return;
+            contentModal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', closeContentModal);
+        }
+
+        if (contentModal) {
+            contentModal.addEventListener('click', function(event) {
+                if (event.target === contentModal) { // Click on overlay
+                    closeContentModal();
+                }
+            });
+        }
+
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const projectCard = this.closest('.project-card');
+                if (projectCard) {
+                    const titleElement = projectCard.querySelector('h4');
+                    const titleText = titleElement ? titleElement.innerText.trim() : 'Details';
+                    const fullContentElement = projectCard.querySelector('.full-content');
+                    const contentHtml = fullContentElement ? fullContentElement.innerHTML : '<p>Content not found.</p>';
+                    openContentModal(titleText, contentHtml);
+                }
+            });
+        });
+
+        // Close content modal with Escape key (รวมกับ event listener ของ lightbox ถ้ามี)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Ensure lightbox and contentModal are defined and accessible here
+                // This will now correctly access lightbox and closeLightbox defined earlier in DOMContentLoaded
+                if (typeof lightbox !== 'undefined' && lightbox && lightbox.style.display === 'flex') {
+                    if (typeof closeLightbox === 'function') closeLightbox();
+                } else if (contentModal && contentModal.classList.contains('active')) {
+                    closeContentModal();
+                }
+            }
+        });
+        // End of Content Modal Logic
+    });
+
+</script>
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close" title="Close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg" alt="Enlarged image">
+  <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+<!-- Content Modal Structure -->
+<div id="contentModal" class="modal-overlay">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <h3 id="modalTitle" class="modal-title-text"></h3>
+            <button class="modal-close-btn" title="Close">&times;</button>
+        </div>
+        <div id="modalBody" class="modal-body-content">
+            <!-- Full content will be injected here by JavaScript -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

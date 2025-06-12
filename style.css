@@ -1,0 +1,1166 @@
+/* === GLOBAL STYLES & CSS VARIABLES === */
+:root {
+    --primary-color: #0D6EFD; /* Bootstrap Blue - สดใสขึ้น */
+    --secondary-color: #6c757d; /* Gray - สำหรับข้อความรองหรือองค์ประกอบเสริม */
+    --light-color: #f8f9fa;    /* Light Gray - พื้นหลังหลัก */
+    --dark-color: #212529;     /* Darker Gray/Black - สำหรับ Navbar หรือข้อความเข้ม */
+    --text-color: #343a40;     /* Default text color - เข้มกว่าเดิมเล็กน้อย */
+    --text-color-light: #f8f9fa; /* Text on dark backgrounds */
+    --accent-color: #198754;   /* Green - สำหรับ call to action หรือ highlight */
+    --border-color: #dee2e6;   /* Light border color */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    --navbar-height: 70px;
+    --font-family-base: 'Poppins', sans-serif;
+    --border-radius: 0.375rem; /* 6px */
+    --transition-speed: 0.3s;
+}
+
+/* === UX/UI Project Main Image Styles === */
+.ux-project-main-image {
+    width: 100%; /* ทำให้รูปภาพกว้างเต็มพื้นที่ของ container */
+    max-width: 750px; /* กำหนดความกว้างสูงสุด (ปรับค่านี้ได้ตามต้องการ) */
+    height: auto; /* รักษาสัดส่วนของรูปภาพ */
+    display: block; /* ช่วยจัดการเรื่อง margin และการจัดวาง */
+    margin: 1.5rem auto 2.5rem auto; /* จัดรูปภาพให้อยู่กึ่งกลาง และเพิ่มระยะห่างบน-ล่าง */
+    border-radius: var(--border-radius); /* ใช้ border-radius จากตัวแปร CSS ของคุณ */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* เพิ่มเงาให้ดูมีมิติ */
+    object-fit: cover; /* ให้รูปภาพเต็มพื้นที่ที่กำหนดโดยไม่เสียสัดส่วน (อาจต้องปรับถ้าภาพถูกตัด) */
+    /* ถ้าไม่ต้องการให้ภาพถูกตัด อาจใช้ object-fit: contain; แล้วกำหนด background-color ให้ container ของภาพ */
+    border: 1px solid var(--border-color); /* เพิ่มเส้นขอบบางๆ */
+}
+
+
+/* ปรับ project-header ให้มี margin-top เพิ่มขึ้นเล็กน้อย ถ้าต้องการ */
+.ux-ui-project .project-header {
+    margin-top: 1rem; /* หรือค่าที่เหมาะสม */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* === Read More Button === */
+.read-more-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem; /* Add some space above the button */
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.read-more-btn:hover {
+    background-color: #0b5ed7; /* Darker primary */
+    transform: translateY(-2px);
+}
+
+.read-more-btn i {
+    transition: transform 0.2s ease-in-out;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* === Content Modal Styles === */
+.modal-overlay {
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.75);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-dialog {
+    background-color: #fff;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal-overlay.active .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+    transition: color var(--transition-speed) ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--dark-color);
+}
+
+.modal-body-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal-body-content h5 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.modal-body-content h5:first-child {
+    margin-top: 0;
+}
+.modal-body-content p,
+.modal-body-content ul {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.modal-body-content ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+.modal-body-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    padding-top: var(--navbar-height);
+    background-color: #e9ecef; /* Changed to a common light gray */
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16.5px; /* Slightly increased base font size */
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: #0b5ed7; /* Darker shade of --primary-color */
+    text-decoration: none; /* Optional: remove underline for a cleaner look with other animations */
+}
+
+/* === NAVBAR === */
+.navbar {
+    background-color: grey;
+    color: var(--text-color-light);
+    padding: 0 2rem;
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 12px space between image and text */
+}
+
+.navbar-profile-pic {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center 20%; /* Adjust this value (e.g., 0% for top, 50% for center) to position the image */
+    border: 2px solid var(--light-color); /* Optional: adds a small border */
+    transition: transform var(--transition-speed) ease;
+}
+
+.nav-brand { /* Changed from .navbar-left .nav-brand to just .nav-brand for simplicity */
+    font-size: 1.3rem; /* ปรับขนาดให้สมดุล */
+    font-weight: bold;
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+.nav-brand:hover {
+    color: var(--primary-color);
+}
+
+.navbar-profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; /* 20px */
+}
+
+.navbar-item {
+    color: var(--text-color-light);
+    text-decoration: none;
+}
+
+.navbar-item button, .dropbtn {
+    background-color: transparent;
+    color: var(--text-color-light);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+    display: flex;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+}
+
+.navbar-item button:hover, .dropbtn:hover {
+    background-color: var(--accent-color); /* Using accent color for hover */
+    border-color: var(--accent-color);
+    color: var(--text-color-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-item button .button-text {
+    display: inline-block;
+}
+#searchInputWrapper button#cancelSearchButton:hover {
+    background-color: #5c636a; /* Darken secondary color */
+}
+
+/* === SEARCH SUGGESTIONS === */
+.search-results-container {
+    position: absolute;
+    top: 100%; /* Position below its new parent: searchInputWrapper */
+    left: 0;   /* Align to the left of searchInputWrapper */
+    background-color: #fff; /* White background */
+    width: 100%; /* Make it full width of searchInputWrapper */
+    border: 1px solid var(--border-color);
+    border-top: none; /* Optional: if you want it to look connected */
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Rounded bottom corners */
+    box-shadow: 0 4px 8px var(--shadow-color);
+    z-index: 1001; /* Ensure it's above other navbar items but below modals if any */
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 0.6rem 1rem; /* 10px 16px */
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.95rem; /* Increased suggestion item font size */
+}
+.suggestion-item:hover {
+    background-color: var(--primary-color); /* Consistent hover with navbar buttons */
+    color: var(--text-color-light); /* Light text on primary color hover */
+}
+
+/* === DROPDOWN MENU === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0px 10px 20px var(--shadow-color);
+    z-index: 1;
+    border-radius: var(--border-radius);
+    right: 0;
+    margin-top: 0.5rem; /* 8px */
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    /* Bouncier transition for dropdown */
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dropdown-content a {
+    color: var(--dark-color);
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+    text-decoration: none;
+    display: block; /* Ensure links take full width */
+    font-size: 0.9rem;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--accent-color); /* Consistent hover with navbar buttons */
+    color: var(--text-color-light);
+}
+
+/* .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+} */
+
+/* === MAIN CONTENT & SECTIONS === */
+main {
+    padding: 2rem 1rem; /* เพิ่ม padding รอบ main content */
+    max-width: 1140px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดกึ่งกลาง */
+}
+
+.portfolio-section {
+    display: none;
+    /* opacity: 0; */ /* Handled by JS logic now */
+    /* transform: translateY(30px); */ /* Using translateX for slide */
+    /* transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+                transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1); */
+    padding: 2.5rem 1.5rem; /* 40px 24px */
+    /* margin-bottom: 2rem; */ /* Not needed with absolute positioning */
+    background-color: var(--light-color); /* Changed to light color for contrast with cards */
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-color);
+     min-height: calc(80vh - var(--navbar-height));
+}
+
+.portfolio-section.active-section {
+    display: block;
+    /* opacity: 1; */ /* Handled by JS logic now */
+    /* transform: translateY(0); */ /* Using translateX for slide */
+    animation: fadeInSlideUp 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+
+}
+
+.portfolio-section h2 {
+    text-align: center;
+    font-size: 2.5rem; /* 40px */
+    color: var(--dark-color);
+    margin-bottom: 2rem; /* 32px */
+    position: relative;
+    padding-bottom: 0.75rem; /* 12px */
+}
+
+.portfolio-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Start from left for animation */
+    bottom: 0;
+    /* transform: translateX(-50%); Removed for left-to-right animation */
+    width: 0; /* Initial width for animation */
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; /* Delay after section content appears */
+}
+
+.portfolio-section p {
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 1.25rem auto; /* 20px */
+    text-align: left;
+    font-size: 1.1rem; /* Increased paragraph font size */
+}
+
+/* Animate the h2::after when section is active */
+.portfolio-section.active-section h2::after {
+    width: 100px; /* Or width: 25%; or any desired width */
+}
+
+/* === GRADUATION PROJECT SECTION STYLES === */
+.project-container {
+    background-color: #fff; /* White background for the main content area of the project */
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.project-header h3 {
+    font-size: 2.4rem; /* Larger for project title */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-objective {
+    font-size: 1.2rem; /* Increased project objective font size */
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid; /* Keep grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* 24px */
+    margin-bottom: 2.5rem;
+}
+
+.project-card {
+    background-color: var(--light-color); /* Slightly different background for cards */
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.project-card h4 {
+    font-size: 1.4rem; /* Increased card title size */
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.project-card h4 i {
+    margin-right: 0.75rem;
+    font-size: 1.2em; /* Make icon slightly larger than text */
+}
+
+.project-card ul, .project-card ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-card ul li, .project-card ol li {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem; /* Further increased list item font size */
+    display: flex;
+    align-items: flex-start; /* Align icon with first line of text */
+    line-height: 1.5;
+}
+
+.project-card ul li i {
+    margin-right: 0.6rem;
+    color: var(--primary-color);
+    margin-top: 0.2em; /* Adjust for vertical alignment */
+    min-width: 1.2em; /* Ensure space for icon */
+}
+
+.project-card.tech-stack-card ul li strong {
+    color: var(--dark-color);
+    margin-right: 0.3rem;
+}
+
+.image-guidelines-card {
+    background-color: #e9ecef; /* A slightly different background for this note-like card */
+}
+
+.guidelines-note {
+    font-size: 1rem; /* Increased guidelines note font size */
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.image-guidelines-card ol li {
+    margin-bottom: 1rem;
+}
+
+.guideline-highlight {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 1rem; /* Increased highlight text */
+    color: var(--accent-color);
+    font-weight: 500;
+}
+.guideline-highlight i {
+    margin-right: 0.3rem;
+}
+.guideline-image {
+    display: block; /* Ensure it takes its own line and respects margins */
+    max-width: 100%; /* Make it responsive */
+    height: auto;    /* Maintain aspect ratio */
+    margin-top: 0.75rem; /* Space above the image */
+    margin-bottom: 0.5rem; /* Space below the image */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+/* Placeholder for future project items (card-like) */
+.portfolio-section .project-item-placeholder {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* === ABOUT ME SECTION STYLES === */
+.section-title-with-icon i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.about-me-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.profile-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-me-profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Added to indicate it's clickable for lightbox */
+}
+
+.about-me-profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.profile-name-title h3 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 0.25rem;
+}
+
+.profile-subtitle {
+    font-size: 1.15rem; /* Increased profile subtitle font size */
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.about-me-narrative {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    max-width: 700px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.about-me-narrative h4 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+.about-me-narrative h4 i {
+    margin-right: 0.5rem;
+}
+
+.about-me-narrative p {
+    font-size: 1.1rem; /* Increased narrative paragraph font size */
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.about-me-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem; /* 24px */
+}
+
+.about-me-card {
+    background-color: #fff;
+    padding: 1.75rem; /* Increased padding */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.about-me-card h4 {
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.about-me-card h4 i {
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+}
+
+.about-me-card h5 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+.about-me-card h5 i {
+    margin-right: 0.5rem;
+}
+
+.about-me-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-me-card ul li, .about-me-card p {
+    margin-bottom: 0.6rem;
+    font-size: 1rem; /* Increased card list item/paragraph font size */
+    line-height: 1.6; /* Base line-height */
+    display: flex; /* For icon alignment in li */
+    align-items: baseline; /* Align text baselines, better for label-value pairs */
+    /* word-break: break-word; */ /* Moved to specific span elements for values */
+}
+
+.about-me-card ul li i.fa-fw, .about-me-card p i.fa-fw { /* For fixed-width icons */
+    margin-right: 0.75rem;
+    color: var(--secondary-color);
+    margin-top: 0.15em; /* Fine-tune vertical alignment */
+    min-width: 1.2em; /* Ensure consistent spacing */
+}
+
+/* Specific for skills card if text wrapping causes icon misalignment */
+.skills-card ul li i.fa-fw {
+    margin-top: 0.2em; /* Slightly adjust for Poppins font if needed */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Add spacing after colon in personal info and education cards */
+.personal-info-card ul li strong + span,
+.education-card ul li strong + span { /* Assuming education items are also LIs */
+    padding-left: 0.5em; /* Adjust this value as needed (e.g., 1ch or 5px) */
+}
+
+/* --- Enhanced styles for About Me card content flow --- */
+
+/* For labels (Email:, GitHub:, etc.) in personal-info and education cards */
+.personal-info-card ul li > strong,
+.education-card ul li > strong {
+    white-space: nowrap; /* Prevents the label itself from wrapping */
+    flex-shrink: 0;      /* Prevents the label from shrinking if space is tight */
+    margin-right: 0.3em; /* Adds a small space after the colon before the value */
+}
+
+/* For values (the actual email, GitHub link, etc.) */
+.personal-info-card ul li > span,
+.education-card ul li > span {
+    word-break: break-word; /* Allows the value to wrap if it's long */
+    /* flex-grow: 1; */ /* Uncomment if value should aggressively take remaining space */
+}
+
+/* For the skills list (e.g., "HTML, CSS, JavaScript, Java") */
+.skills-card ul li {
+    white-space: nowrap; /* Forces skills to stay on one line */
+    /* If skills overflow, the card might need to be wider, or consider overflow: hidden; text-overflow: ellipsis; */
+}
+
+.about-me-card a {
+    font-weight: 500;
+}
+
+.internship-company {
+    font-weight: 500;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Styles for the new External Links Card */
+.external-links-card {
+    /* Inherits .about-me-card styles */
+    /* Specific adjustments if needed */
+}
+
+.external-links-container {
+    margin-top: 1.25rem; /* Increased top margin */
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 0.75rem; /* 12px */
+}
+
+.external-link-button {
+    display: flex; /* Changed to flex for full width button feel */
+    align-items: center;
+    justify-content: center; /* Center text and icon */
+    gap: 0.5rem; /* 8px */
+    padding: 0.6rem 1.1rem; /* Adjusted padding */
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: var(--border-radius);
+    text-decoration: none; /* Ensure no underline */
+    font-size: 0.95rem; /* Slightly larger font */
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    text-align: center;
+}
+
+.external-link-button:hover {
+    background-color: #0b5ed7; /* Darker primary color */
+    color: var(--text-color-light);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Styles for Resume Preview in External Links Card */
+.resume-item-container {
+    margin-top: 1rem; /* Space above the resume section if GitHub link is present */
+    padding-top: 1rem; /* Padding inside the resume item area */
+    border-top: 1px solid var(--border-color); /* Separator line if GitHub link is above */
+}
+
+.external-links-container > a:first-child + .resume-item-container {
+    /* Only add border-top if GitHub link is actually the preceding sibling */
+}
+
+.resume-title {
+    font-size: 1.1rem; /* Increased resume title font size */
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.resume-pdf-preview {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: #e9ecef; /* Fallback background */
+}
+.resume-pdf-preview iframe {
+    display: block;
+    border: none;
+}
+/* Responsive adjustments for About Me intro */
+@media (min-width: 768px) {
+    .about-me-intro {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start; /* Align items to the top */
+    }
+    .profile-header-container {
+        flex-direction: row; /* Image and name side-by-side */
+        align-items: center;
+        text-align: left;
+        flex-basis: 40%; /* Give some space for profile pic and name */
+    }
+    .about-me-profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    .about-me-narrative {
+        flex-basis: 60%; /* Narrative takes remaining space */
+    }
+}
+
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+    .navbar-left .nav-brand {
+        font-size: 1.1rem; /* ลดขนาดชื่อบนจอเล็ก */
+    }
+    .navbar-right {
+        gap: 0.5rem; /* 8px */
+    }
+    .navbar-item button, .dropbtn {
+        padding: 0.5rem 0.625rem; /* 8px 10px */
+        font-size: 0.95rem; /* Slightly increased for small screens */
+    }
+    .navbar-item button .button-text {
+        display: none; /* ซ่อนข้อความปุ่ม เหลือแต่ icon */
+    }
+    .dropdown-content {
+        min-width: 180px;
+    }
+    main {
+        padding: 1.5rem 0.5rem;
+    }
+    .portfolio-section h2 {
+        font-size: 2rem; /* 32px */
+    }
+    .portfolio-section p {
+        font-size: 1.05rem; /* Adjusted for consistency */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-left .nav-brand {
+        font-size: 1rem; /* ลดขนาดชื่ออีกสำหรับจอเล็กมาก */
+        max-width: 150px; /* ป้องกันข้อความยาวเกินไป */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .navbar-right {
+        gap: 0.25rem; /* 4px */
+    }
+     .navbar-item button, .dropbtn {
+        padding: 0.4rem 0.5rem;
+    }
+    .portfolio-section {
+        padding: 2rem 1rem;
+    }
+    .portfolio-section h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Added for click-based dropdown */
+.dropdown-content.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#searchInputWrapper {
+    /* display: none; is set by inline style initially, JS will toggle to flex */
+    align-items: center;
+    position: relative; /* Added for positioning searchResultsContainer */
+    gap: 0.5rem;
+}
+
+#searchInput {
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-family: inherit;
+    font-size: 0.95rem; /* Increased search input font size */
+    flex-grow: 1;
+    min-width: 150px; /* Adjust as needed */
+    background-color: #fff; /* Ensure it's visible on dark navbar */
+    color: var(--text-color); /* Text color inside input */
+}
+
+#searchInputWrapper button {
+    padding: 0.4rem 0.6rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+    line-height: 1; /* For icon vertical centering */
+    display: flex; /* For icon centering */
+    align-items: center;
+    justify-content: center;
+}
+
+#searchInputWrapper button:hover {
+    background-color: #0b5ed7; /* Darken primary color */
+}
+
+#searchInputWrapper button#cancelSearchButton {
+    background-color: var(--secondary-color);
+}
+#searchInputWrapper button#cancelSearchButton:hover {
+    background-color: #5c636a; /* Darken secondary color */
+}
+.portfolio-section.active-section h2::after {
+    width: 100px; /* หรือค่าความกว้างที่คุณต้องการ */
+}
+
+/* General Animation for section content appearing */
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* In style.css or a <style> tag in <head> */
+
+.image-guidelines-card {
+    /* You might already have styles for .project-card, these are specific additions/overrides */
+    padding: 20px;
+}
+
+.image-guidelines-card ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.image-guidelines-card li {
+    background-color: #f9f9f9; /* Light background for each item */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column; /* Default: stack content and image vertically */
+    gap: 15px; /* Space between content and image */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.image-guidelines-card li:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.guideline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between strong text and highlight */
+}
+
+.image-guidelines-card li strong {
+    font-size: 1.2em; /* Further Increased guideline title */
+    color: #333;
+    line-height: 1.4;
+}
+
+.guideline-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer; /* Indicate it's clickable for lightbox */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: center; /* Center image if it's narrower than container */
+}
+
+.guideline-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.guideline-highlight {
+    font-size: 1.05em; /* Further Increased highlight text */
+    color: #444;
+    background-color: #e7f3fe;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 4px solid #007bff; /* Blue accent border */
+}
+
+.guideline-highlight .fas {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .image-guidelines-card li {
+        flex-direction: row; /* Side-by-side layout */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .guideline-content {
+        flex: 1; /* Text content takes available space */
+        padding-right: 20px; /* Space between text and image */
+    }
+
+    .guideline-image {
+        flex-shrink: 0; /* Prevent image from shrinking */
+        max-width: 280px; /* Adjust max-width as needed */
+        align-self: flex-start; /* Align image to the start of its flex container */
+    }
+}
+
+/* Lightbox styles */
+.lightbox {
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px; /* Adjusted padding */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLightbox 0.3s ease-out;
+}
+
+@keyframes fadeInLightbox {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 80vh;
+    border-radius: 4px;
+    animation-name: zoomInImage;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy zoom */
+}
+
+@keyframes zoomInImage {
+    from {transform:scale(0.7); opacity: 0.5;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+.lightbox-caption {
+    margin: 15px auto; /* Added top margin */
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.15em; /* Increased lightbox caption font size */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;  /* Adjusted position */
+    right: 45px; /* Adjusted position */
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    line-height: 1; /* Ensure consistent height */
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* === PDF Embed Styles === */
+.pdf-embed-container {
+    margin-top: 2.5rem; /* Space above the PDF section */
+    padding: 1.5rem;
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    text-align: center; /* Center the download button */
+}
+
+.pdf-embed-container h4 {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center title and icon */
+}
+
+.pdf-embed-container h4 i {
+    margin-right: 0.6rem;
+    color: var(--primary-color); /* Or var(--accent-color) */
+}
+
+.pdf-preview {
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures iframe respects border-radius */
+    background-color: #e9ecef; /* Fallback background if PDF doesn't load */
+}
+
+.pdf-preview iframe {
+    display: block; /* Removes extra space below iframe */
+    border: none; /* Removes default iframe border */
+}
+
+.pdf-download-button {
+    display: inline-block;
+    background-color: var(--accent-color); /* Using accent color for download */
+    color: var(--text-color-light);
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--border-radius); /* Consistent border radius */
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.pdf-download-button i {
+    margin-right: 0.5rem;
+}
+
+.pdf-download-button:hover {
+    background-color: #157347; /* Darker accent color */
+    color: var(--text-color-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
